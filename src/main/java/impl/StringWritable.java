@@ -3,25 +3,31 @@ package impl;
 import api.MyWriteComparable;
 
 /**
- * Created by mit on 4/8/15.
+ * Created by mit on 4/8/15. Modified by srikar
+ */
+
+/**
+ * String class Implementation of {@link MyWriteComparable} interface to be able
+ * to use it either as a key/value in the framework.
  */
 public class StringWritable implements MyWriteComparable<StringWritable> {
 
     private String str;
 
-    public StringWritable(){}
+    public StringWritable() {
+    }
 
-    public StringWritable(String str){
+    public StringWritable(String str) {
         this.str = str;
     }
-    
+
     @Override
     public String getString() {
         return this.str;
     }
-    
+
     @Override
-    public StringWritable deserialize(String ip){
+    public StringWritable deserialize(String ip) {
         this.str = ip;
         return this;
     }

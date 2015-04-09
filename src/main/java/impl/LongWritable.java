@@ -3,25 +3,31 @@ package impl;
 import api.MyWriteComparable;
 
 /**
- * Created by mit on 4/8/15.
+ * Created by mit on 4/8/15. Modified by srikar
+ */
+
+/**
+ * Long class Implementation of {@link MyWriteComparable} interface to be able
+ * to use it either as a key/value in the framework.
  */
 public class LongWritable implements MyWriteComparable<LongWritable> {
 
     private Long number;
 
-    public LongWritable(){}
+    public LongWritable() {
+    }
 
-    public LongWritable(Long number){
+    public LongWritable(Long number) {
         this.number = number;
     }
-    
+
     @Override
     public String getString() {
         return this.number.toString();
     }
-    
+
     @Override
-    public LongWritable deserialize(String ip) throws NumberFormatException{
+    public LongWritable deserialize(String ip) throws NumberFormatException {
         this.number = Long.parseLong(ip);
         return this;
     }

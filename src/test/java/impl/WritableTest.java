@@ -15,8 +15,8 @@ public class WritableTest {
         System.out.println(f1.compareTo(f2));
 
         
-        StringWritable s1 = new StringWritable("a");
-        StringWritable s2 = new StringWritable("a");
+        StringWritable s1 = new StringWritable("eee");
+        StringWritable s2 = new StringWritable("fa");
         System.out.println(s1.compareTo(s2));
 
     }

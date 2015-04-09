@@ -5,7 +5,7 @@ import api.MyWriteComparable;
 /**
  * Created by mit on 4/8/15.
  */
-public class FloatWritable implements MyWriteComparable<Float> {
+public class FloatWritable implements MyWriteComparable<FloatWritable> {
 
     private Float number;
 
@@ -21,15 +21,14 @@ public class FloatWritable implements MyWriteComparable<Float> {
     }
     
     @Override
-    public void deserialize(String ip) throws NumberFormatException{
+    public FloatWritable deserialize(String ip) throws NumberFormatException{
         this.number = Float.parseFloat(ip);
+        return this;
     }
 
     @Override
-    public int compareTo(Float number2) {
-        if(this.number == number2) return 0;
-        if(this.number > number2) return 1;
-        return -1;
+    public int compareTo(FloatWritable number2) {
+        return this.number.compareTo(number2.getNumber());
     }
 
     public Float getNumber() {

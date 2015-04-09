@@ -5,7 +5,7 @@ import api.MyWriteComparable;
 /**
  * Created by mit on 4/8/15.
  */
-public class IntWritable implements MyWriteComparable<Integer> {
+public class IntWritable implements MyWriteComparable<IntWritable> {
 
     private Integer number;
     
@@ -21,15 +21,14 @@ public class IntWritable implements MyWriteComparable<Integer> {
     }
     
     @Override
-    public void deserialize(String ip){
+    public IntWritable deserialize(String ip){
         this.number = Integer.parseInt(ip);
+        return this;
     }
 
     @Override
-    public int compareTo(Integer number2) {
-        if(this.number == number2) return 0;
-        if(this.number > number2) return 1;
-        return -1;
+    public int compareTo(IntWritable number2) {
+        return this.number.compareTo(number2.getNumber());
     }
 
     public Integer getNumber() {

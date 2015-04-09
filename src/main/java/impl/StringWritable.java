@@ -5,7 +5,7 @@ import api.MyWriteComparable;
 /**
  * Created by mit on 4/8/15.
  */
-public class StringWritable implements MyWriteComparable<String> {
+public class StringWritable implements MyWriteComparable<StringWritable> {
 
     private String str;
 
@@ -17,17 +17,18 @@ public class StringWritable implements MyWriteComparable<String> {
     
     @Override
     public String getString() {
-        return this.str.toString();
+        return this.str;
     }
     
     @Override
-    public void deserialize(String ip){
+    public StringWritable deserialize(String ip){
         this.str = ip;
+        return this;
     }
 
     @Override
-    public int compareTo(String string2) {
-        return string2.compareTo(this.str);
+    public int compareTo(StringWritable string2) {
+        return this.getString().compareTo(string2.getString());
     }
 
     public String getStr() {

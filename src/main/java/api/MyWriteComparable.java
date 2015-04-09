@@ -6,5 +6,5 @@ package api;
 public interface MyWriteComparable<T> extends Comparable<T> {
     
     String getString();
-    void deserialize(String ip);
+    MyWriteComparable deserialize(String ip);
 }

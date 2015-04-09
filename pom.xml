@@ -6,7 +6,7 @@
 
     <groupId>my-mapreduce-api</groupId>
     <artifactId>my-mapreduce-api</artifactId>
-    <version>1.4-SNAPSHOT</version>
+    <version>1.5-SNAPSHOT</version>
 
 
 </project>

@@ -14,7 +14,12 @@ public class WritableTest {
         FloatWritable f2 = new FloatWritable(14.11f);
         System.out.println(f1.compareTo(f2));
 
-        
+
+        DoubleWritable d1 = new DoubleWritable(14.13);
+        DoubleWritable d2 = new DoubleWritable(14.11);
+        System.out.println(d1.compareTo(d2));
+
+
         StringWritable s1 = new StringWritable("eee");
         StringWritable s2 = new StringWritable("fa");
         System.out.println(s1.compareTo(s2));

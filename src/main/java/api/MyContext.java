@@ -14,10 +14,19 @@ import java.io.IOException;
  * @param <V> Value Class which should extend {@link MyWriteComparable}
  */
 public final class MyContext<K extends MyWriteComparable, V extends MyWriteComparable> {
+
+    private final static String LINE_SEPERATOR = "\n";
+    private final static String DEFAULT_KEY_VALUE_SEPARATOR = "\t";
     private BufferedWriter bw;
+    private String keyValueSeparator;
 
     public MyContext(BufferedWriter bw) {
+        this(bw, DEFAULT_KEY_VALUE_SEPARATOR);
+    }
+
+    public MyContext(BufferedWriter bw, String keyValueSeparator) {
         this.bw = bw;
+        this.keyValueSeparator = keyValueSeparator;
     }
 
     /**
@@ -29,7 +38,16 @@ public final class MyContext<K extends MyWriteComparable, V extends MyWriteCompa
      * @param value value to write to the buffered writer
      * @throws IOException
      */
+
     public void write(K key, V value) throws IOException {
-        bw.write(key.getString() + "\t" + value.getString() + "\n");
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append(key.getString());
+        stringBuilder.append(this.keyValueSeparator);
+        stringBuilder.append(value.getString());
+        stringBuilder.append(LINE_SEPERATOR);
+
+        bw.write(stringBuilder.toString());
     }
 }

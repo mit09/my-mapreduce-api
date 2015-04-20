@@ -6,7 +6,7 @@
 
     <groupId>my-mapreduce-api</groupId>
     <artifactId>my-mapreduce-api</artifactId>
-    <version>1.7-SNAPSHOT</version>
+    <version>1.8-SNAPSHOT</version>
 
     <build>
         <pluginManagement>

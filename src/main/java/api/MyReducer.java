@@ -14,5 +14,14 @@ import java.util.Iterator;
  * @param <V> Value Class which should extend {@link MyWriteComparable}
  */
 public interface MyReducer<K extends MyWriteComparable, V extends MyWriteComparable> {
+
+    /**
+     * reduces input key and iterable list of values to a set of
+     * key/value pairs
+     *
+     * @param key       input key
+     * @param value     list of iterable values
+     * @param context   context object to write to file
+     */
     void reduce(K key, Iterator<V> value, MyContext context);
 }

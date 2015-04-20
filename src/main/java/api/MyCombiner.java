@@ -16,5 +16,13 @@ import java.util.Iterator;
 
 public interface MyCombiner<K extends MyWriteComparable, V extends MyWriteComparable> {
 
+    /**
+     * combines input key and iterable list of values to a set of
+     * key/value pairs
+     *
+     * @param key     input key
+     * @param value   list of iterable values
+     * @param context context object to write to file
+     */
     void reduce(K key, Iterator<V> value, MyContext context);
 }

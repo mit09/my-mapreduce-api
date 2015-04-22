@@ -24,7 +24,6 @@ public class JobConf {
     private static int numReducers = 1;
 
     public void initialize(){
-        System.out.println("Hey");
     }
 
     public static String getMapperClassName() {

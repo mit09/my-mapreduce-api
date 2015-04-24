@@ -48,6 +48,7 @@ public class JobConf {
 
     public static void setCombinerClassName(String combinerClassName) {
         JobConf.combinerClassName = combinerClassName;
+        JobConf.isCombinerSet = true;
     }
 
     public static String getMapKeyInputClassName() {
@@ -116,10 +117,6 @@ public class JobConf {
 
     public static boolean isIsCombinerSet() {
         return isCombinerSet;
-    }
-
-    public static void setIsCombinerSet(boolean isCombinerSet) {
-        JobConf.isCombinerSet = isCombinerSet;
     }
 
     public static int getNumReducers() {

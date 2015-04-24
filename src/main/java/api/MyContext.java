@@ -31,8 +31,6 @@ public final class MyContext<K extends MyWriteComparable, V extends MyWriteCompa
 
     /**
      * writes key and value to the buffered writer
-     * <p/>
-     * TODO:Key and value can be generics with Serializable
      *
      * @param key   key to write to the buffered writer
      * @param value value to write to the buffered writer

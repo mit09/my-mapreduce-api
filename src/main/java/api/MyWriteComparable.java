@@ -1,7 +1,7 @@
 package api;
 
 /**
- * Created by mit, srikar, vishal on 4/8/15. Modified by Amitash
+ * Created by mit and srikar on 4/8/15.
  */
 
 /**
